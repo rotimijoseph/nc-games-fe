@@ -1,7 +1,7 @@
 const Header = () => {
 
     return (
-        <h1>dizzy whizzy games</h1>
+        <h1>Dizzy Whizzy Games</h1>
     )
 }
 

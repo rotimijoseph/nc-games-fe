@@ -3,6 +3,7 @@ import Nav from './components/Nav';
 import Header from './components/Header';
 import GamesReviews from './components/GamesReviews';
 import { Routes, Route } from 'react-router-dom'
+import SingleGameReview from './components/SingleGameReview';
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<GamesReviews />} />
-        <Route path="/category/:category_name" element={<GamesReviews />} />
+        <Route path="/reviews/:review_id" element={<SingleGameReview />} />
       </Routes>
     </div>
   );
