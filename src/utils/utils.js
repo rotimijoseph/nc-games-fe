@@ -27,3 +27,12 @@ export const getCommentsByReviewId = (review_id) => {
         return response.data
     })
 }
+
+export const patchByReviewId = (review_id, vote_change) => {
+    const patchBody = {
+        votes: vote_change
+    };
+
+    return gamesAPI
+    .patch(`/reviews/${review_id}`, patchBody);
+}

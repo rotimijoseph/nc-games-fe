@@ -24,7 +24,7 @@ const Comments = () => {
                 {comments.map(({body, author, votes, created_at, comment_id}) => {
                     return <li key={comment_id} className="commentsLi">
                         <p>&#128100; <span className="bolded">{author}</span>: {body}</p>
-                        <p> <span className="commentDates">{new Date(created_at).toString()}</span></p>
+                        <p> <span className="commentDates">{new Date(created_at).toString().slice(0, -30)}</span></p>
                         <p>&#11014; <span className="bolded">{votes}</span></p>
                     </li>
                 })}
