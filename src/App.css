@@ -24,7 +24,6 @@ ul li {
 
 .link {
   text-decoration: none;
-  font-style: italic;
 }
 
 .link:link {
@@ -101,6 +100,30 @@ img {
 }
 
 .allGamesReviews {
-  display: block;
-  column-count: 2;
+  display: grid;
+  padding: 2rem;
+  grid-template-columns: 300px 1fr;
+  gap: 1rem;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+  font: 500 100%/1.5 system-ui;
+}
+
+.comments {
+  background-color: #eee;
+  border: 2px solid black;
+  color: black;
+  padding: 15px;
+  width: 100%;
+  text-align: left;
+  font-size: 15px;
+}
+
+.commentsLi {
+  margin: 0px;
+}
+
+.commentDates {
+  font-size: 12px;
 }

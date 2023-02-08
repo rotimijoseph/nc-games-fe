@@ -19,11 +19,11 @@ const GamesReviews = () => {
     return (
         <section>
             <p>A summary of all reviews for the games. For more details on the review, click on the review name! </p>
-            <ul>
+            <ul className="allGamesReviews">
                 {gamesReviews.map(({title, category, review_img_url, votes, review_id}) => {
-                    return <li key={review_id} className="allGamesReviews">
-                        <Link to={`/reviews/${review_id}`} className="link">"{title}"</Link>, a review for a <span className="bolded">{category}</span> game. &#11014; <span className="bolded">{votes}</span> votes
-                    <img src={review_img_url} alt={title}/>
+                    return <li key={review_id}>
+                        <Link to={`/reviews/${review_id}`} className="link"><span className="bolded">{title}</span>, a review for a <span className="bolded">{category}</span> game. &#11014; <span className="bolded">{votes}</span> votes
+                    <p><img src={review_img_url} alt={title}/></p></Link>
                     </li>
                  })}
             </ul>
