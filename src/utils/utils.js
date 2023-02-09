@@ -34,3 +34,13 @@ export const patchByReviewId = (review_id, votesChange) => {
     return gamesAPI
     .patch(`/reviews/${review_id}`, patchBody)
 }
+
+export const postCommentByReviewId = (review_id, newComment) => {
+    const postBody = {
+        username: newComment.username,
+        body: newComment.body
+    }
+
+    return gamesAPI
+    .post(`/reviews/${review_id}/comments`, postBody)
+}
