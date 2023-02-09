@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import { getReviewById } from "../utils/utils";
 import Comments from "./Comments";
+import Votes from "./Votes";
 
 const SingleGameReview = () => {
 
@@ -19,7 +20,7 @@ const SingleGameReview = () => {
     
     const dateString = singleGameReview.created_at
     const newDate = new Date(dateString)
-    const date = newDate.toString()
+    const date = newDate.toString().slice(0, -30)
 
     if (isLoading) return <p className="loading">Loading...</p>
     return (
@@ -27,10 +28,10 @@ const SingleGameReview = () => {
             <p className="reviewTitle">"{singleGameReview.title}"</p>
             <p>{singleGameReview.owner} &#128172;</p> 
             <p className="reviewBody">{singleGameReview.review_body}</p>
-            <img src={singleGameReview.review_img_url}/>
+            <img src={singleGameReview.review_img_url} alt={singleGameReview.title}/>
             <p>Designer: {singleGameReview.designer}</p>
             <p>{singleGameReview.category}</p>
-            <p>&#11014; <span className="bolded">{singleGameReview.votes} votes</span></p>
+            <Votes votes={singleGameReview.votes} review_id={review_id}/>
             <p>{date}</p>
             <Comments />
         </section>

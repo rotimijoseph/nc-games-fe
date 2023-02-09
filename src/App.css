@@ -122,8 +122,33 @@ img {
 
 .commentsLi {
   margin: 0px;
+  display: block;
 }
 
 .commentDates {
   font-size: 12px;
 }
+
+.votes {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  width: 30%;
+  padding: 0px;
+}
+
+.votes button {
+  padding: 5px;
+  margin: 20px;
+  width: 30%;
+  align-items: center;
+  cursor: pointer;
+  border: 1.5px solid black;
+  border-radius: 3px;
+}
+
+.votes button:hover {
+  background-color: #b8af6a;
+  border-radius: 3px;
+}
+
