@@ -4,9 +4,11 @@ import { patchByReviewId } from "../utils/utils";
 const Votes = ({votes, review_id}) => {
     const [voteOnReview, setVoteOnReview] = useState(0)
 
-    const changeVotes = (change) => {
-        setVoteOnReview((currVotes) => currVotes + change);
-        patchByReviewId(review_id, change)
+    const changeVotes = (votesChange) => {
+        setVoteOnReview((currVotes) => {
+        return currVotes + votesChange
+        });
+        patchByReviewId(review_id, votesChange)
     }
 
     if (voteOnReview === -1) return (

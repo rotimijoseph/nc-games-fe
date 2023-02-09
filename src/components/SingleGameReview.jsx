@@ -19,7 +19,6 @@ const SingleGameReview = () => {
     }, [review_id])
     
     const dateString = singleGameReview.created_at
-    console.log(dateString)
     const newDate = new Date(dateString)
     const date = newDate.toString().slice(0, -30)
 
@@ -29,10 +28,10 @@ const SingleGameReview = () => {
             <p className="reviewTitle">"{singleGameReview.title}"</p>
             <p>{singleGameReview.owner} &#128172;</p> 
             <p className="reviewBody">{singleGameReview.review_body}</p>
-            <img src={singleGameReview.review_img_url}/>
+            <img src={singleGameReview.review_img_url} alt={singleGameReview.title}/>
             <p>Designer: {singleGameReview.designer}</p>
             <p>{singleGameReview.category}</p>
-            <Votes votes={singleGameReview.votes} />
+            <Votes votes={singleGameReview.votes} review_id={review_id}/>
             <p>{date}</p>
             <Comments />
         </section>

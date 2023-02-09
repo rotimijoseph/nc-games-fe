@@ -28,11 +28,9 @@ export const getCommentsByReviewId = (review_id) => {
     })
 }
 
-export const patchByReviewId = (review_id, vote_change) => {
+export const patchByReviewId = (review_id, votesChange) => {
     const patchBody = {
-        votes: vote_change
-    };
-
+    inc_votes: votesChange }
     return gamesAPI
-    .patch(`/reviews/${review_id}`, patchBody);
+    .patch(`/reviews/${review_id}`, patchBody)
 }
