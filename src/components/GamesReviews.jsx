@@ -22,7 +22,7 @@ const GamesReviews = () => {
             <ul className="allGamesReviews">
                 {gamesReviews.map(({title, category, review_img_url, votes, review_id}) => {
                     return <li key={review_id}>
-                        <Link to={`/reviews/${review_id}`} className="link"><span className="bolded">{title}</span>, a review for a <span className="bolded">{category}</span> game. &#11014; <span className="bolded">{votes}</span> votes
+                        <Link to={`/reviews/${review_id}`} className="link"><span className="bolded">{title}</span>. <span className="bolded"> {votes}</span> votes for this <span className="bolded">{category}</span> game
                     <p><img src={review_img_url} alt={title}/></p></Link>
                     </li>
                  })}

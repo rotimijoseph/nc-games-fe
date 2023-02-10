@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import { getCommentsByReviewId } from "../utils/utils";
+import AddComment from "./AddComment";
 
 const Comments = () => {
 
@@ -20,6 +21,7 @@ const Comments = () => {
     return (
         <section>
             <p className="comments">Comments</p>
+            <AddComment review_id={review_id} setComments={setComments} />
             <ul>
                 {comments.map(({body, author, votes, created_at, comment_id}) => {
                     return <li key={comment_id} className="commentsLi">
