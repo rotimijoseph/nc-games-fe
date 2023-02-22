@@ -202,3 +202,7 @@ form {
   margin: 0 auto;
   align-items: center;
 }
+
+.individualCategory {
+  text-decoration: none;
+}

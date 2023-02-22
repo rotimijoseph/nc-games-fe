@@ -44,3 +44,11 @@ export const postCommentByReviewId = (review_id, newComment) => {
     return gamesAPI
     .post(`/reviews/${review_id}/comments`, postBody)
 }
+
+export const getCategories = () => {
+    return gamesAPI 
+    .get("/categories")
+    .then((response) => {
+        return response.data
+    })
+}

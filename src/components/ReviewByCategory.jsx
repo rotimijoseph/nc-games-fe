@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { getAllReviews } from "../utils/utils";
 import { Link } from 'react-router-dom';
 
-const GamesReviews = () => {
+const ReviewByCategory = () => {
 
     const [gamesReviews, setGamesReviews] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -32,4 +32,5 @@ const GamesReviews = () => {
     )
 }
 
-export default GamesReviews;
+
+export default ReviewByCategory

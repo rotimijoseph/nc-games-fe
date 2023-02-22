@@ -4,6 +4,8 @@ import Header from './components/Header';
 import GamesReviews from './components/GamesReviews';
 import { Routes, Route } from 'react-router-dom'
 import SingleGameReview from './components/SingleGameReview';
+import GameReviewsForCategory from './components/GameReviewsForCategory';
+import ReviewByCategory from './components/ReviewByCategory';
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
       <Routes>
         <Route path="/" element={<GamesReviews />} />
         <Route path="/reviews/:review_id" element={<SingleGameReview />} />
+        <Route path="/category" element={<GameReviewsForCategory />} />
+        <Route path="/:category_name" element={<ReviewByCategory />} />
       </Routes>
     </div>
   );
