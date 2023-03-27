@@ -18,7 +18,7 @@ const GamesReviews = () => {
     if (isLoading) return <p className="loading">Loading...</p>
     return (
         <section>
-            <p>A summary of all reviews for the games. For more details on the review, click on the review name! </p>
+            <p>Welcome! Find below reviews for all different types of games. For more details on the review, click on the name of the review! </p>
             <ul className="allGamesReviews">
                 {gamesReviews.map(({title, category, review_img_url, votes, review_id}) => {
                     return <li key={review_id}>

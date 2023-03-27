@@ -1,36 +1,44 @@
 import { useState, useEffect } from "react";
-import { getAllReviews } from "../utils/utils";
+import { getAllReviewsByCategory } from "../utils/utils";
 import { Link } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 
 const ReviewByCategory = () => {
 
     const [gamesReviews, setGamesReviews] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const { category } = useParams();
+
+    console.log(category)
+    console.log("are we here?")
 
     useEffect(() => {
-        getAllReviews()
-        .then((reviewsFromApi) => {
-            setGamesReviews(reviewsFromApi)
-            setIsLoading(false)
-        })
-    }, [])
+            getAllReviewsByCategory(category)
+            .then((reviewsFromApi) => {
+                setGamesReviews(reviewsFromApi)
+                setIsLoading(false)
+                console.log(reviewsFromApi)
+            })
+    }, [category])
 
     if (isLoading) return <p className="loading">Loading...</p>
-    return (
+    if (category) return (
         <section>
-            <p>A summary of all reviews for the games. For more details on the review, click on the review name! </p>
+            <p>All the reviews for {category} games! For more details on the review, click on the name! </p>
             <ul className="allGamesReviews">
-                {gamesReviews.map(({title, category, review_img_url, votes, review_id}) => {
-                    return <li key={review_id}>
-                        <Link to={`/reviews/${review_id}`} className="link"><span className="bolded">{title}</span>. 
-                    <p><img src={review_img_url} alt={title}/></p></Link>
-                    <span className="bolded"> {votes}</span> votes for this <span className="bolded">{category}</span> game
+                {
+                    gamesReviews.filter((game) => {
+                        return game.category === category
+                    }).map((review) => {
+                    return <li key={review.review_id}>
+                    <Link to={`/reviews/${review.review_id}`} className="link"><span className="bolded">{review.title}</span>. 
+                    <p><img src={review.review_img_url} alt={review.title}/></p></Link>
+                    <span className="bolded"> {review.votes}</span> votes for this game
                     </li>
                  })}
             </ul>
         </section>
     )
 }
-
 
 export default ReviewByCategory

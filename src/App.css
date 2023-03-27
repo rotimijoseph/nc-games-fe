@@ -206,3 +206,7 @@ form {
 .individualCategory {
   text-decoration: none;
 }
+
+.categoryTypes {
+  justify-content: center;
+}
