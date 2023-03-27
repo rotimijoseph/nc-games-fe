@@ -8,7 +8,7 @@ Welcome to Dizzy Whizzy Games. This project connects to my back-end API (linked 
 
 In order to use this repository, you will need to:
 
-- Clone this repository to your local machine by running 'git clone <repo-url>' and cd into the directory
+- Clone this repository to your local machine by running 'git clone < repo-url >' and cd into the directory
 - Install the required dependancies using 'npm install'
 - Start the development server by running 'npm start'
 
