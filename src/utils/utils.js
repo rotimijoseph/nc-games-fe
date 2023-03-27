@@ -46,7 +46,6 @@ export const getCategories = () => {
 
 export const getAllReviewsByCategory = (cat) => {
   return gamesAPI.get(`/reviews?category=${cat}`).then((response) => {
-    console.log(response.data, "this is my data");
     return response.data;
   });
 };

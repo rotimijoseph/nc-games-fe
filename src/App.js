@@ -17,7 +17,6 @@ function App() {
         <Route path="/reviews/:review_id" element={<SingleGameReview />} />
         <Route path="/category" element={<GameReviewsForCategory />} />
         <Route path="/:category" element={<ReviewByCategory />} />
-        {/* <Route path="/reviews/:category" element={<ReviewByCategory />} /> */}
       </Routes>
     </div>
   );

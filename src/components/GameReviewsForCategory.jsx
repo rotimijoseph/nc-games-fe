@@ -19,7 +19,6 @@ const GameReviewsForCategory = () => {
         <section className="categoryTypes">
             <p>For reviews by category, see below!</p>
             {category.map((cat, index) => {
-                console.log(cat)
             return <ul ><Link className="individualCategory" key={index} to={`/${cat.slug}`}>{cat.slug}</Link></ul>;
         })}
         </section>

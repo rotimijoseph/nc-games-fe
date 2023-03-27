@@ -9,15 +9,11 @@ const ReviewByCategory = () => {
     const [isLoading, setIsLoading] = useState(true);
     const { category } = useParams();
 
-    console.log(category)
-    console.log("are we here?")
-
     useEffect(() => {
             getAllReviewsByCategory(category)
             .then((reviewsFromApi) => {
                 setGamesReviews(reviewsFromApi)
                 setIsLoading(false)
-                console.log(reviewsFromApi)
             })
     }, [category])
 
